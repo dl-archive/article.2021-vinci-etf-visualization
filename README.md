@@ -4,7 +4,7 @@ Martin Büßemeyer, [Daniel Limberger](https://orcid.org/0000-0002-9111-4809), [
 
 *Proceedings of the 14th International Symposium on Visual Information Communication and Interaction (VINCI '21)*, September 6–8, 2021, Potsdam, Germany. ACM.
 
-DOI: [10.1145/3481549.3481568](https://doi.org/10.1145/3481549.3481568) · [ResearchGate](https://www.researchgate.net/publication/354332166)
+DOI: [10.1145/3481549.3481568](https://doi.org/10.1145/3481549.3481568) · Author's version: [Zenodo](https://doi.org/10.5281/zenodo.24099600) · [ResearchGate](https://www.researchgate.net/publication/354332166)
 
 > Personal, long-term investment products, especially ones for retirement savings, require thorough understanding to use them profitably.
 > Even simple savings plans based on exchange-traded funds (ETFs) are subject to many variables and uncertainties to be considered for expected and planned-upon returns.
