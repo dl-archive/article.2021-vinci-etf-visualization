@@ -30,9 +30,12 @@
 \SetAlCapFnt{\footnotesize}
 \SetAlCapNameFnt{\footnotesize}
 
+\usepackage{eso-pic}
+\AddToShipoutPictureFG{\AtPageLowerLeft{\put(\LenToUnit{0.5\paperwidth},\LenToUnit{6mm}){\makebox[0pt][c]{\fontsize{6.5}{8}\selectfont\color{gray}Author's revised version (2026-11-10). Version of record: https://doi.org/10.1145/3481549.3481568}}}}
+
 \begin{document}
 
-\title[Interactive Simulation and Visualization of Long-Term, ETF-based Investment Strategies]{Interactive Simulation and Visualization of\\Long-Term, ETF-based Investment Strategies}
+\title[Interactive Simulation and Visualization of Long-Term, ETF-based Investment Strategies]{Interactive Simulation and Visualization of\texorpdfstring{\\}{ }Long-Term, ETF-based Investment Strategies}
 
 \author{Martin B{\"u}{\ss}emeyer}
 \affiliation{%
@@ -84,7 +87,7 @@
 \ccsdesc[300]{Human-centered computing~Information visualization}
 
 \keywords{%
-    interative visualization, 
+    \texorpdfstring{\spaceskip=0.8\fontdimen2\font plus 0.5\fontdimen3\font minus \fontdimen4\font}{}interactive visualization, 
     financial visualization, 
     401(k) plan visualization, 
     ETF savings plan visualization,
@@ -96,9 +99,8 @@
 Pension entitlement is currently falling continuously due to the demographic change~\cite{wendel2016-retirement,borsch2012riester}. 
 To make up for a gap in personal retirement provision, one can resort to offers from financial institutions. 
 For example, \emph{Riester} in Germany~\cite{borsch2012riester, ubber28exchange} or the more widely known \emph{401(k)} plans in the USA~\cite{wolff2011transformation}.
-The underlying strategies are often actively managed and produce unnecessary costs, while passive strategies, tend to win over active strategies in the long run~\cite{kommer2018souveran}.
-This is one of the reasons why passive investment strategies based on long-term saving plans using exchange-traded funds (ETFs) have become quite popular.
-more attraction in other countries.
+The underlying strategies are often actively managed and produce unnecessary costs, while passive strategies tend to win over active strategies in the long run~\cite{kommer2018souveran}.
+This is one of the reasons why passive investment strategies based on long-term saving plans using exchange-traded funds (ETFs) have become quite popular and gain more attraction in other countries.
 Since most direct banks and brokers provide opportunities for regular, small investments in ETFs with reduced costs, it is fairly easy to minimize costs and administrative expenses in order to maximize savings.
 \begin{figure}[t]
 	\includegraphics[width=\linewidth]{figures/teaser-v1.pdf}
@@ -108,7 +110,7 @@ Since most direct banks and brokers provide opportunities for regular, small inv
 \end{figure}
 The ETF investment system itself, however, is rather complicated and requires stock market literacy~\cite{balloch2014-literacy}.
 Therein lies a fundamental conflict of interest, as forecasts from brokers or banks themselves are not designed to be transparent to the customer. 
-In order to maximize incentives to create a depot everything is kept as simple as possible.
+In order to maximize incentives to create a depot, everything is kept as simple as possible.
 This leads to over-simplified communication of costs, taxes, and idealized forecasts~\cite{devilliers2019-reframing}.
 The main contributions of this work are
 \begin{itemize}
@@ -123,22 +125,21 @@ Thus, self-efficacy with regard to financial decision-making improves the likeli
 We propose an interactive savings simulation and target non-experts to support decision-making on ETF-based saving plans~(\autoref{fig:teaser}).
 We enable interactive examination of various aspects of a savings plan by making all calculations in real time and provide immediate visual feedback.
 This allows users to (1) understand the interactions of parameters and risks during savings and payout phase, and to (2) identify scenarios that fit their own needs.
-Our open source prototype focuses on Germany's tax law (could be adapted to other countries) and is available at \href{https://etf-vis.net}{etf-vis.net}.
+Our open-source prototype focuses on Germany's tax law (could be adapted to other countries) and is available at \href{https://etf-vis.net}{etf-vis.net}.
 
 \section{Related Work}
 \enquote{Financial literacy empowers people to craft their finances in a way that they are able to manage their everyday expenses, maintain an emergency fund, plan for children's education and prepare for their swift post-retirement years}~\cite{goyal2021-literacy}. 
 This becomes more important since employers and the federal government forward the responsibility to the individual resident~\cite{lusardi2017-narratives}.
 This literacy is understood in a broader sense and \enquote{[v]isualizations may be [...] [a] good approach for overcoming processing difficulties because they shift information processing to the perceptual system, improving understanding of the concept presented and allowing decision-makers to quickly learn from trends and patterns in the data}~\cite{lusardi2017-narratives}.
-For example, visualization is used to get an overview on whole markets and publicly available finance data~\cite{wattenberg1999-stockmarket}, or underlying mechanics and consequences~\cite{fry2013-teaching}.
+For example, visualization is used to get an overview of whole markets and publicly available finance data~\cite{wattenberg1999-stockmarket}, or underlying mechanics and consequences~\cite{fry2013-teaching}.
 Visualization has also become available for a more personal use~\cite{huang2015-personal} and was used to assess and communicate risks for savings~\cite{rudolph2009-finvis}.
-for growth.
 We were surprised to see how few tools for forecasting and visualizations are currently available for end users.
 Those available, however, usually kept relevant factors like costs, inflation, and taxes out of consideration~\cite{saving_plan_extra_etf, saving_plan_black_rock}. 
-Similar issues are present in user driven visualizations that generalize across country borders and thus cost and taxation models~\cite{portfolio-charts} though they are more transparent in their simulations.  
+Similar issues are present in user-driven visualizations that generalize across country borders and thus cost and taxation models~\cite{portfolio-charts} though they are more transparent in their simulations.  
 
 There are several statistical models used for predicting stock markets. 
 One prominent model is ARIMA.
-Though research has shown that ARIMA only works in some cases for forecasting short-term periods~\cite{angadi2015-time, Cheng2020ApplicationOA, Mohamedashik2019StatisticalTF}. Moreover, we are aiming for long-term forecasting periods.
+However, research has shown that ARIMA only works in some cases for forecasting short-term periods~\cite{angadi2015-time, Cheng2020ApplicationOA, Mohamedashik2019StatisticalTF}. Moreover, we are aiming for long-term forecasting periods.
 We can see that the market evolved in an exponential fashion during the last decades~\cite{leippold2016-index}. 
 Thus, simpler regression models seem sufficient for our long-term forecasting.
 
@@ -148,13 +149,13 @@ Our simulation provides access to several ETFs, uses historical data for forecas
 \paragraph{Source Data}
 We use historical data from Alphavantage to forecast prices.
 Their API provides the average monthly closing value for the last five years of many well-known ETFs. 
-Similar services are available from Yahoo Finances and xignite.
+Similar services are available from Yahoo Finance and Xignite.
 
 \paragraph{German Costs and Taxation Model}
-German citizen have a yearly exemption amount that can be used on investment gains to save taxes.
+German citizens have a yearly exemption amount that can be used on investment gains to save taxes.
 The tax amount is calculated by multiplying the gain by the partial exemption rate of $0.7$.
 This prevents double taxation that would occur since the ETF owner has already paid taxes.
-The tax rate is composed of corporate income tax and the solidarity contribution, which add up to $0.26375\%$.
+The tax rate is composed of capital gains tax and the solidarity contribution, which add up to $26.375\%$.
 In Germany, the FIFO principle is prescribed for the sale of shares: the oldest shares are sold first. 
 Since these are likely to have the highest profit, taxes due at the beginning of the payout period will be highest and decrease over time.
 Accumulating and distributing ETFs differ in the way dividends are distributed and taxed.
@@ -171,8 +172,8 @@ Other costs arise from brokerage fees, usually a mix of fixed amounts and percen
 Statistical models like MA and ARIMA are used for short-term forecasts. 
 Since we have to forecast far into the future, these models are not suitable.
 Instead, models capturing general price development of recent decades seem to be sufficient.
-Even though, prices have continued to rise exponentially~\cite{leippold2016-index},
-we decided to be pessimistic and assume linear model inspired by~\cite{Nunno2014StockMP} in our simulation to avoid overly optimistic forecasts.
+Even though prices have continued to rise exponentially~\cite{leippold2016-index},
+we decided to be pessimistic and assume a linear model inspired by~\cite{Nunno2014StockMP} in our simulation to avoid overly optimistic forecasts.
 This can be easily replaced by an exponential model, if desired, or adjusted directly by means of a confidence score on the price development.
 
 \begin{algorithm}[b]
@@ -272,7 +273,7 @@ The process is shown in Algorithm~\ref{alg:payout}.
 \end{figure}
 
 \section{Visualization Technique}
-The visualization features two charts, the cash flow and detail view, which are synced via a time-axis (x-axis)
+The visualization features two charts, the cash flow and detail view, which are synced via a time-axis (x-axis).
 The switch from saving to payout phase is indicated by a vertical line.
 The end of the payout phase fades out to indicate inaccuracies in life expectancy.
 The actual data at a certain time is printed on the right side when hovering over that point in time. 
@@ -296,7 +297,7 @@ An additional line emphasizes the total value of the depot.
 The negative part consists of the accumulated costs (purple) and the accumulated taxes (red). 
 Additionally, the inflation is added as a visual cue.
 On the bottom of this chart, all actual values are listed in text form. 
-They display the difference in the respective value to the previous parameter configuration in respect to the hovered point in time.
+They display the difference in the respective value to the previous parameter configuration with respect to the hovered point in time.
 Moreover, a confidence area can be optionally added over the existing stacked areas. 
 In this case, the borders of the confidence area are the total depot value that would incur when the minimum and maximum confidence would be used.
 The middle line displays the currently selected confidence and is identical to the total value line when the confidence area is not displayed~(\autoref{fig:confidence}).
@@ -308,11 +309,11 @@ The middle line displays the currently selected confidence and is identical to t
 \end{figure}
 
 \paragraph{Parameterization}
-Parameters are divided in the categories money, time, cost, and visualization. 
+Parameters are divided into the categories money, time, cost, and visualization. 
 In the money options the starting capital, monthly investment, and payout can be set. 
 Investment and payout amounts can be set to dynamically increase on a yearly basis. 
-The cost section gives control to the costs used for the saving and payout phase.
-Furthermore, the time options specify the length of both phases by means of the current age, life expectation, and years left until retirement.
+The cost section gives control over the costs used for the saving and payout phase.
+Furthermore, the time options specify the length of both phases by means of the current age, life expectancy, and years left until retirement.
 The visualization options include ETF selection and confidence configuration used for forecasting.
 
 \section{Use Case: Family Retirement Savings}
@@ -321,20 +322,20 @@ In this section, we (1) discuss the results of our prototypical simulation and v
 \paragraph{Use Case: Family Retirement Savings}
 Let's imagine a young family with one child. 
 We assume a starting capital of \euro~ 1000, a monthly investment of \euro~ 100 and payout of \euro~ 1000. 
-In order to compensate the inflation both, the investment and payout increases by $1\%$ per year. 
+In order to compensate for inflation, both the investment and payout increase by $1\%$ per year. 
 Additionally, the tax-free amount for a married couple is currently \euro~ 1602 and the accumulating version of the ETFs shall be used.
-Moreover, the couple is around $25$ years old, will retire in $43$ years and has a life expectation of $80$ years.
-Their investment is equally spread across two standard ETFs the S\,\&\,P~500 and MSCI~EM.
-Furthermore, the family is assumed to already have an account at the bank ING which has relative high investment costs with \euro~ 4.99 fixed costs and $0.25\%$ percentage costs.
+Moreover, the couple is around $25$ years old, will retire in $43$ years and has a life expectancy of $80$ years.
+Their investment is equally spread across two standard ETFs: the S\,\&\,P~500 and MSCI~EM.
+Furthermore, the family is assumed to already have an account at the bank ING which has relatively high investment costs with \euro~ 4.99 fixed costs and $0.25\%$ percentage costs.
 The confidence is set to $100\%$ to minimize expectation.
 The simulation predicts a depot value of \euro~ 161000 with overall costs of \euro~ 5200, \euro~ 0 taxes, and \euro~ 60000 effectively lost to inflation at the end of the saving phase.
-Their depot lasts until 2084 which is one year earlier before the expected lifetime. 
+Their depot lasts until 2084 which is one year before the expected lifetime. 
 Until that date, \euro~ 8000 costs and \euro~ 7000 taxes will be paid. 
 To ensure that the savings last until the expected lifetime, a cheaper broker with only $1\%$ percentage costs can be chosen to minimize the costs. 
 This will result in \euro~ 3150 costs, \euro~ 8120 taxes and a leftover depot amount of \euro~ 15700 at the expected lifetime (still not enough though).
 In this case, the visualization enables long-term planning and shows the impact of individual factors.
 At best, it could lead to better future planning and decision-making. 
-For example, changing the bank and increase monthly investment dynamically to minimize costs and allow for a buffer respectively. 
+For example, changing the bank and increasing the monthly investment dynamically to minimize costs and allow for a buffer respectively. 
 
 \begin{figure}[t]
     \includegraphics[width=\linewidth]{figures/visualization-full.png}
@@ -342,7 +343,7 @@ For example, changing the bank and increase monthly investment dynamically to mi
         A parameter pane divided into money, time, cost, and visualization options is on the left. 
         The cash flow chart (top) displays the yearly investments and payouts. 
         The depot chart (center) displays the forecast including costs, taxes, and inflation. 
-        Details w.r.t. to the year pointed at are displayed on right next to each chart. 
+        Details w.r.t. the year pointed at are displayed right next to each chart. 
         An agglomeration of all values is displayed in a tabular fashion (bottom).}
     \label{fig:visualization-full}
 \end{figure}
@@ -356,7 +357,7 @@ Moreover, the simulation is based on the current situation.
 Thus, it is based on the current taxation laws and broker costs. 
 Both will probably change in the future, which would invalidate the simulation.
 The visualization is good at displaying the negative factors costs, taxes and inflation, and the ratio between those negative factors and the depot value.
-It covers both, the depot development and the cash flow simultaneously. 
+It covers both the depot development and the cash flow simultaneously. 
 A drawback might be the unconventional layout of the inflation, which has been mentioned by several individuals who got in touch with the visualization.
 The other negative values are already discounted from the depot value, except the inflation.
 We decided to add a little hint by providing a visualization option that discounts the inflation from the total line.
@@ -364,19 +365,19 @@ In its presented state, the simulation and visualization are missing further exp
 For now, the user is expected to have basic knowledge on ETFs and what factors are involved in a long-term savings plan or retirement strategy.
 However, a certain learning and exploration phase is expected.
 The user is expected to discover and understand the parameters and their effect on the simulation and visualization by means of iterative exploration of the problem and solution space.
-A similar approach has been done by ~\cite{portfolio-charts}. 
+A similar approach has been taken by~\cite{portfolio-charts}. 
 There, a lot of different visualizations are offered, each, however, stands for itself and does not allow for direct visual transfer between one another.
-We think that the visualization is a meaningful resource for individuals who intend to start ETF saving plans and want to understand the impact of a certain strategies and figure out the specifics for their plan.
+We think that the visualization is a meaningful resource for individuals who intend to start ETF saving plans and want to understand the impact of certain strategies and figure out the specifics for their plan.
 Furthermore, the visualization could be applied to other use cases, e.g., the passive income for one's children, which would be handed over to them when they are grown up.
 
 \section{Conclusions}
 We implemented a prototypical simulation and visualization for an ETF retirement plan strategy, which is based on the German cost and taxation model. 
-The prototype (\href{https://etf-vis.net}{etf-vis.net}) is build using Typescript, React,  Bootstrap, and D3, and source code (\href{https://github.com/varg-dev/etf-vis}{github.com/varg-dev/etf-vis}) are publicly available.
-It and can be used for different use cases next to the retirement planning such as planning a passive income for one's child.
-It might be able to fill the gap of personal visualizations which can \enquote{support people with limited visualization literacy and analytics experience}~\cite{huang2015-personal} and, following, the supports understanding and actions to enact on one's own retirement plans~\cite{pandey2014-power}. 
+The prototype (\href{https://etf-vis.net}{etf-vis.net}) is built using TypeScript, React, Bootstrap, and D3, and its source code (\href{https://github.com/varg-dev/etf-vis}{github.com/varg-dev/etf-vis}) is publicly available.
+It can be used for different use cases next to the retirement planning such as planning a passive income for one's child.
+It might be able to fill the gap of personal visualizations which can \enquote{support people with limited visualization literacy and analytics experience}~\cite{huang2015-personal} and, consequently, support understanding and actions to enact on one's own retirement plans~\cite{pandey2014-power}. 
 As a result, we extend available literature towards what is needed to create effective, interactive visualization for the communication and literacy of upcoming financial products~\cite{lusardi2017-narratives}. 
 
-In order to evaluate the effectiveness of the visualization, a user study with different groups regarding age, economic stand and financial literacy could be done. 
+In order to evaluate the effectiveness of the visualization, a user study with different groups regarding age, economic status and financial literacy could be done. 
 The visualization could be extended to explain the underlying simulation. 
 Moreover, the simulation could be extended with further components, such as a simulation of a financial crash. 
 That way, a user could interactively explore the consequences on the retirement savings.
