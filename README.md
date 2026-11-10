@@ -12,7 +12,8 @@ DOI: [10.1145/3481549.3481568](https://doi.org/10.1145/3481549.3481568) · Autho
 > The visualization consists of four parts: a form-fill interface for configuration, a savings and payout simulation, a cash flow chart, and a savings chart.
 > Based on a specific use case, we discuss how private investors can benefit from using our visualization after a short training period.
 
-<p><a href="buessemeyer2021-etf-visualization-as-submitted.pdf"><img src="preview/page-1.webp" width="24%" alt="page 1"/></a> <a href="buessemeyer2021-etf-visualization-as-submitted.pdf"><img src="preview/page-2.webp" width="24%" alt="page 2"/></a> <a href="buessemeyer2021-etf-visualization-as-submitted.pdf"><img src="preview/page-3.webp" width="24%" alt="page 3"/></a> <a href="buessemeyer2021-etf-visualization-as-submitted.pdf"><img src="preview/page-4.webp" width="24%" alt="page 4"/></a> <a href="buessemeyer2021-etf-visualization-as-submitted.pdf"><img src="preview/page-5.webp" width="24%" alt="page 5"/></a></p>
+<p><a href="buessemeyer2021-etf-visualization-as-submitted.pdf"><img src="preview/page-1.webp" width="24%" alt="page 1"/></a> <a href="buessemeyer2021-etf-visualization-as-submitted.pdf"><img src="preview/page-2.webp" width="24%" alt="page 2"/></a> <a href="buessemeyer2021-etf-visualization-as-submitted.pdf"><img src="preview/page-3.webp" width="24%" alt="page 3"/></a> <a href="buessemeyer2021-etf-visualization-as-submitted.pdf"><img src="preview/page-4.webp" width="24%" alt="page 4"/></a></p>
+<details><summary>All 5 pages</summary><p><a href="buessemeyer2021-etf-visualization-as-submitted.pdf"><img src="preview/page-5.webp" width="24%" alt="page 5"/></a></p></details>
 
 ## Contents
 
